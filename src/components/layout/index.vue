@@ -29,6 +29,11 @@
         <img slot="icon-active" src="../../assets/img/layout/shouye_active.png" alt="">
         <span slot="label">首页</span>
       </tabbar-item>
+      <tabbar-item :selected="$route.name === 'pay'" link="/pay">
+        <img slot="icon" src="../../assets/img/layout/shouye.png" alt="">
+        <img slot="icon-active" src="../../assets/img/layout/shouye_active.png" alt="">
+        <span slot="label">支付</span>
+      </tabbar-item>
       <tabbar-item :selected="$route.name === 'my'" link="/my">
         <img slot="icon" src="../../assets/img/layout/my.png" alt="">
         <img slot="icon-active" src="../../assets/img/layout/my_active.png" alt="">
@@ -55,4 +60,7 @@ export default {
   // 缓动动画 样式引入
   @import "../../assets/less/transitions/rightGradually.less";
   /*@import "../../assets/less/transitions/slowlyDisappear.less";*/
+  .weui-tabbar{
+    background: #fff !important;
+  }
 </style>

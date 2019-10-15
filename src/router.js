@@ -1,10 +1,7 @@
 /* router vue路由管理 */
 import Vue from 'vue'
 import Router from 'vue-router'
-// import store from './store'
-import layout from './pages/layout'
-import home from './pages/home'
-import my from './pages/my'
+import store from './store/index'
 
 Vue.use(Router)
 
@@ -15,19 +12,25 @@ const router = new Router({
     {
       path: '/',
       name: 'layout',
-      component: layout,
+      component: resolve => require(['./components/layout'], resolve),
       redirect: '/home',
       children: [
         {
           path: '/home',
           name: 'home',
-          component: home,
+          component: resolve => require(['./pages/home/index'], resolve),
+          meta: { title: '首页', keepAlive: false, isShowHead: false, isShowTab: true }
+        },
+        {
+          path: '/pay',
+          name: 'pay',
+          component: resolve => require(['./pages/pay/index'], resolve),
           meta: { title: '首页', keepAlive: false, isShowHead: false, isShowTab: true }
         },
         {
           path: '/my',
           name: 'my',
-          component: my,
+          component: resolve => require(['./pages/my/index'], resolve),
           meta: { title: '我的', keepAlive: false, isShowHead: false, isShowTab: true }
         }
       ]
@@ -38,7 +41,7 @@ const router = new Router({
 // const whiteList = ['login', 'register', 'forget']
 // router.beforeEach(function (to, from, next) {
 //   // 登录拦截
-//   if (whiteList.indexOf(to.name) < 0 && !store.state.token) {
+//   if (whiteList.indexOf(to.name) < 0 && !store.state.user.token) {
 //     next({
 //       path: '/home',
 //       query: { redirect: to.fullPath }
