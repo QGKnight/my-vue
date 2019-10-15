@@ -1,0 +1,55 @@
+/* 全局最高层级less样式 */
+html,body{
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body{
+  font-size: @global-default-size;
+}
+
+/* 清楚ios默认样式 */
+input,textarea,button{
+  -webkit-appearance: none;
+  outline: none;
+}
+
+/* 初始化placeholder字体颜色 */
+input::-webkit-input-placeholder{
+  color: @global-default-placeholder;
+}
+input:-moz-placeholder{
+  color: @global-default-placeholder;
+}
+input::-moz-placeholder{
+  color: @global-default-placeholder;
+}
+input:-ms-input-placeholder{
+  color: @global-default-placeholder;
+}
+
+/* 禁止长摁选中 */
+*:not(input, textarea) {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 初始化toast和loading样式 */
+#app{
+  height: 100%;
+  .vux-toast{
+    .weui-toast{
+      top: 11.25em;
+    }
+  }
+  .vux-loading{
+    .weui-toast{
+      top: 11.25em;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/* 缓慢消失  缓动动画 */
+
+// 进入过渡的开始状态
+.v-enter {
+  opacity: 0;
+}
+// 进入过渡生效时的状态
+.v-enter-active {
+  transition: opacity .3s ease;
+}
+// 进入过渡的结束状态
+.v-enter-to {
+}
+// 离开过渡的开始状态
+.v-leave {
+}
+// 离开过渡生效时的状态
+.v-leave-active {
+  transition: opacity .3s ease;
+}
+// 离开过渡的结束状态
+.v-leave-to {
+  opacity: 0;
+}

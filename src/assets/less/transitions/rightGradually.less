@@ -1,0 +1,26 @@
+/* 从右侧渐入  缓动动画 */
+
+// 进入过渡的开始状态
+.v-enter {
+  transform: translateX(100vw);
+}
+// 进入过渡生效时的状态
+.v-enter-active {
+  position: absolute;
+  top: 0;
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+// 进入过渡的结束状态
+.v-enter-to {
+}
+// 离开过渡的开始状态
+.v-leave {
+}
+// 离开过渡生效时的状态
+.v-leave-active {
+  transform: translateX(-100vw);
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+// 离开过渡的结束状态
+.v-leave-to {
+}
